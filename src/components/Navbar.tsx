@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import Icon from '@refugiogamer/components/Icon';
+import Icon from '@/components/Icon';
 import { usePathname } from 'next/navigation';
 
 interface MenuOption {

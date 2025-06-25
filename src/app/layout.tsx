@@ -1,7 +1,7 @@
-import './global.css';
+import './globals.css';
 import { Exo_2, Orbitron } from 'next/font/google';
-import Navbar from '@refugiogamer/components/Navbar';
-import Footer from '@refugiogamer/components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const exoFont = Exo_2({
   subsets: ['latin'],
@@ -63,11 +63,10 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body
-        suppressHydrationWarning
         className={`${exoFont.variable} ${orbitronFont.variable} antialiased`}
       >
         <Navbar />
-        <main className={'py-4'}>{children}</main>
+        <div className={'py-4'}>{children}</div>
         <Footer />
       </body>
     </html>
