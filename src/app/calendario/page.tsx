@@ -10,6 +10,10 @@ export default async function Page() {
     'calendars',
     releasesQuery(),
   ).then((response) => {
+    if (!response?.data?.length) {
+      return [];
+    }
+
     const dataMap = new Map<string, Release[]>();
     for (const release of response.data) {
       const hasReleaseDate = release.dateFormat !== 'yyyy';
@@ -31,7 +35,7 @@ export default async function Page() {
 
   return (
     <section className="flex flex-col items-center gap-8">
-      {releasesResponse.map(({ title, items }) => (
+      {releasesResponse?.map(({ title, items }) => (
         <ReleaseTable title={title} items={items} key={title} />
       ))}
     </section>

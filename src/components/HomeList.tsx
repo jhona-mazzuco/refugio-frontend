@@ -12,8 +12,8 @@ export default async function HomeList() {
 
   return (
     <>
-      <ArticleList articles={articleResponse.data} />
-      {articleResponse.meta.pagination.total > articleResponse.data.length && (
+      <ArticleList articles={articleResponse?.data} />
+      {articleResponse?.meta?.pagination.total > articleResponse?.data.length && (
         <div className={'flex justify-center mt-6 mb-4'}>
           <NextPageButton />
         </div>

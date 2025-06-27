@@ -7,7 +7,7 @@ export default async function Page() {
   const newsResponse = await getStrapiList<Article>('articles', newsQuery());
   return (
     <div>
-      <ArticleList articles={newsResponse.data} />
+      <ArticleList articles={newsResponse?.data} />
     </div>
   );
 }

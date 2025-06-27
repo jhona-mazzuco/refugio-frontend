@@ -18,12 +18,12 @@ export default async function ReviewList() {
       <>
         <div className="grid grid-cols-[1fr_auto] gap-2">
           <div className="flex flex-col gap-2">
-            <label className="font-heading text-sm">{data.game}</label>
-            <Author author={data.profile} />
+            <label className="font-heading text-sm">{ data.game }</label>
+            <Author author={ data.profile } />
           </div>
 
-          <div className={`justify-self-end`}>
-            <Score score={data.score!} size={ScoreSize.medium} />
+          <div className={ `justify-self-end` }>
+            <Score score={ data.score! } size={ ScoreSize.medium } />
           </div>
         </div>
       </>
@@ -31,11 +31,15 @@ export default async function ReviewList() {
   }
 
   return (
-    <AsideContent
-      title={'Análises'}
-      seeAllUrl={'/analises'}
-      listContent={reviewResponse.data}
-      listItemTemplate={rowTemplate}
-    />
+    <>
+      {reviewResponse?.data?.length > 0 && (
+        <AsideContent
+          title={'Análises'}
+          seeAllUrl={'/analises'}
+          listContent={reviewResponse?.data}
+          listItemTemplate={rowTemplate}
+        />
+      )}
+    </>
   );
 }

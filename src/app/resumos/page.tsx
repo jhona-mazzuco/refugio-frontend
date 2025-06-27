@@ -10,7 +10,7 @@ export default async function Page() {
 
   return (
     <div>
-      <ArticleList articles={resumeResponse.data} />
+      <ArticleList articles={resumeResponse?.data} />
     </div>
   );
 }

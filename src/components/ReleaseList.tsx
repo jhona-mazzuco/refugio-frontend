@@ -33,12 +33,14 @@ export default async function ReleaseList() {
 
   return (
     <>
-      <AsideContent
-        title={'Calendário'}
-        seeAllUrl={'/calendario'}
-        listContent={calendarResponse.data}
-        listItemTemplate={itemTemplate}
-      />
+      {calendarResponse?.data?.length > 0 && (
+        <AsideContent
+          title={'Calendário'}
+          seeAllUrl={'/calendario'}
+          listContent={calendarResponse?.data}
+          listItemTemplate={itemTemplate}
+        />
+      )}
     </>
   );
 }

@@ -5,5 +5,5 @@ export function getStrapiList<T>(url: string, queryParams?: string) {
     headers: {
       Authorization: `Bearer ${process.env['STRAPI_TOKEN']}`,
     },
-  }).then((res) => res.json() as unknown as StrapiListResponse<T>);
+  }).then((res) => res && res.json() as unknown as StrapiListResponse<T>);
 }
