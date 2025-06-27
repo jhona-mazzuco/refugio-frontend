@@ -1,4 +1,4 @@
-import { AuthorProfile } from "@/models/AuthorProfile";
+import { AuthorProfile } from "@/lib/models/AuthorProfile";
 
 interface AuthorProps {
   author: AuthorProfile;

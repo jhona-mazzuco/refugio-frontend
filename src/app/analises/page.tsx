@@ -1,16 +1,17 @@
-import { ArticleList } from '@/components/ArticleList';
-import { StrapiListResponse } from '@/models/StrapiListResponse';
-import { Article } from '@/models/Article';
-import { reviewsQuery } from '@/queries/reviewsQuery';
-import { getStrapiList } from '@/utils/getStrapiList';
+import { ArticleList } from '@/app/ui/ArticleList';
+import { Article } from '@/lib/models/Article';
+import { reviewsQuery } from '@/lib/queries/reviewsQuery';
+import { getStrapiList } from '@/lib/utils/getStrapiList';
 
 export default async function Page() {
-  const reviewResponse: StrapiListResponse<Article> =
-    await getStrapiList<Article>('articles', reviewsQuery());
+  const reviewResponse = await getStrapiList<Article>(
+    'articles',
+    reviewsQuery(),
+  );
 
   return (
     <div>
-      <ArticleList articles={reviewResponse?.data} />
+      <ArticleList articles={reviewResponse?.data ?? []} />
     </div>
   );
 }

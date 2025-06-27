@@ -1,12 +1,13 @@
-import { StrapiListResponse } from '@/models/StrapiListResponse';
-import { Article } from '@/models/Article';
-import { ArticleList } from '@/components/ArticleList';
-import { getStrapiList } from '@/utils/getStrapiList';
-import { resumesQuery } from '@/queries/resumesQuery';
+import { Article } from '@/lib/models/Article';
+import { ArticleList } from '@/app/ui/ArticleList';
+import { getStrapiList } from '@/lib/utils/getStrapiList';
+import { resumesQuery } from '@/lib/queries/resumesQuery';
 
 export default async function Page() {
-  const resumeResponse: StrapiListResponse<Article> =
-    await getStrapiList<Article>('articles', resumesQuery());
+  const resumeResponse = await getStrapiList<Article>(
+    'articles',
+    resumesQuery(),
+  );
 
   return (
     <div>

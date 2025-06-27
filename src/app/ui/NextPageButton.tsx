@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/Button';
+import Button from '@/app/ui/Button';
 import { useState } from 'react';
 
 export function NextPageButton() {

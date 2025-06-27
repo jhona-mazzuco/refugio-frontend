@@ -1,8 +1,8 @@
-import AsideContent from '@/components/AsideContent';
-import { Release } from '@/models/Release';
+import AsideContent from '@/app/ui/AsideContent';
+import { Release } from '@/lib/models/Release';
 import { format, parseISO } from 'date-fns';
-import { homeCalendarQuery } from '@/queries/homeCalendarQuery';
-import { getStrapiList } from '@/utils/getStrapiList';
+import { homeCalendarQuery } from '@/lib/queries/homeCalendarQuery';
+import { getStrapiList } from '@/lib/utils/getStrapiList';
 
 export default async function ReleaseList() {
   const calendarResponse = await getStrapiList<Release>(

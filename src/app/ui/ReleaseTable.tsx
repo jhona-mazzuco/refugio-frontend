@@ -1,6 +1,6 @@
-import { Release } from '@/models/Release';
+import { Release } from '@/lib/models/Release';
 import { format } from 'date-fns';
-import { Platform } from '@/models/Platform';
+import { Platform } from '@/lib/models/Platform';
 
 interface ReleaseRowProps {
   item: Release;
@@ -39,8 +39,8 @@ interface ReleaseTableProps {
 export function ReleaseTable({ title, items }: ReleaseTableProps) {
   return (
     <table className={`table-auto border-spacing-2 w-full max-w-[800px]`}>
-      <caption className="font-heading text-2xl mb-6">
-        {title.toLocaleUpperCase()}
+      <caption className="font-heading text-2xl mb-6 capitalize">
+        {title}
       </caption>
       <thead className="font-heading">
         <tr>

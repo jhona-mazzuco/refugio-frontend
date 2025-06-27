@@ -1,6 +1,6 @@
-import HomeList from '@/components/HomeList';
-import ReviewList from '@/components/ReviewList';
-import ReleaseList from '@/components/ReleaseList';
+import HomeList from '@/app/HomeList';
+import ReviewList from '@/app/ReviewList';
+import ReleaseList from '@/app/ReleaseList';
 
 export default async function Index() {
   return (

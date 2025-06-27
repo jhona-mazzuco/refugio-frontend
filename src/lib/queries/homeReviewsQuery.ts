@@ -1,4 +1,4 @@
-import { Tags } from "@/models/Tags";
+import { Tags } from "@/lib/models/Tags";
 import qs from "qs";
 
 export function homeReviewsQuery() {

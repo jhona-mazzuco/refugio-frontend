@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image, { ImageProps } from 'next/image';
-import Button from '@/components/Button';
+import Button from '@/app/ui/Button';
 
 function UnoptimizedImage(props: ImageProps) {
   return <Image {...props} unoptimized />;

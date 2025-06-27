@@ -1,4 +1,4 @@
-import { ScoreSize } from "@/models/ScoreSize";
+import { ScoreSize } from "@/lib/models/ScoreSize";
 import cn from 'classnames';
 
 

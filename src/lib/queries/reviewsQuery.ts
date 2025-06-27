@@ -1,13 +1,13 @@
 import qs from 'qs';
-import { Tags } from '@/models/Tags';
+import { Tags } from '@/lib/models/Tags';
 
-export function newsQuery() {
+export function reviewsQuery() {
   return qs.stringify({
     status: 'published',
     filters: {
       tags: {
         id: {
-          $contains: Tags.news,
+          $eq: Tags.review,
         },
       },
     },

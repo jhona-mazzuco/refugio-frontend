@@ -1,4 +1,4 @@
-import { Article } from '@/models/Article';
+import { Article } from '@/lib/models/Article';
 import ArticleCard from './ArticleCard';
 
 type ArticleProps = {

@@ -1,4 +1,4 @@
-import { Tag } from "@/models/Tag";
+import { Tag } from "@/lib/models/Tag";
 
 interface ArticleTagProps {
   tag: Tag;

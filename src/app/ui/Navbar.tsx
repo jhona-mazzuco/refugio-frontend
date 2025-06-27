@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import Icon from '@/components/Icon';
+import Icon from '@/app/ui/Icon';
 import { usePathname } from 'next/navigation';
 
 interface MenuOption {
@@ -45,7 +45,7 @@ function ActionsMenu() {
 
 function HomeLogo() {
   return (
-    <Link href="/" tabIndex={ 1 }>
+    <Link href="/public" tabIndex={ 1 }>
       <Image src="/logo.webp" alt="Logo Refúgio Gamer" width={ 40 } height={ 40 }/>
     </Link>
   );

@@ -1,7 +1,7 @@
 import './globals.css';
 import { Exo_2, Orbitron } from 'next/font/google';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '@/app/ui/Navbar';
+import Footer from '@/app/ui/Footer';
 
 const exoFont = Exo_2({
   subsets: ['latin'],
