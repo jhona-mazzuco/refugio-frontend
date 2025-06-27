@@ -45,7 +45,7 @@ function ActionsMenu() {
 
 function HomeLogo() {
   return (
-    <Link href="/public" tabIndex={ 1 }>
+    <Link href="/" tabIndex={ 1 }>
       <Image src="/logo.webp" alt="Logo Refúgio Gamer" width={ 40 } height={ 40 }/>
     </Link>
   );
