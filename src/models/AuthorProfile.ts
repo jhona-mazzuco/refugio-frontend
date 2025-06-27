@@ -1,6 +1,6 @@
 import { UploadedImage } from './UploadedImage';
 
-export interface Author {
+export interface AuthorProfile {
   id: number;
   name: string;
   biography: string;

@@ -1,28 +1,18 @@
-import ArticleCard from '@/components/ArticleCard';
-import { Article } from '@/models/Article';
-import { StrapiListResponse } from '@/models/StrapiListResponse';
+import HomeList from '@/components/HomeList';
+import ReviewList from '@/components/ReviewList';
+import ReleaseList from '@/components/ReleaseList';
 
 export default async function Index() {
-  const data = await fetch((process.env['STRAPI_URL'] as string) + '/articles', {
-    headers: {
-      Authorization: `Bearer ${ process.env['STRAPI_TOKEN'] }`
-    }
-  });
-
-  const response: StrapiListResponse<Article> = await data.json();
-
   return (
-    <section className={ 'flex flex-col h-80 items-center justify-center' }>
-      <div className="grid grid-cols-1 gap-8 ">
-        <ul>
-          {
-            response.data.length ? response.data.map((article: Article) => (
-              <li key={ article.id }>
-                <ArticleCard article={ article } />
-              </li>
-            )) : (<li>Vazio</li>)
-          }
-        </ul>
+    <section className={'flex flex-col items-center justify-center'}>
+      <div className={'grid sm:grid-cols-4 gap-8 px-1'}>
+        <div className={'sm:col-span-3'}>
+          <HomeList />
+        </div>
+        <aside className={`flex flex-col sm:grid-cols-1 gap-4`}>
+          <ReviewList />
+          <ReleaseList />
+        </aside>
       </div>
     </section>
   );

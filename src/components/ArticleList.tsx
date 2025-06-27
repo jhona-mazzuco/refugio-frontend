@@ -5,21 +5,13 @@ type ArticleProps = {
   articles: Article[];
 }
 
-
 export function ArticleList({ articles }: ArticleProps) {
   return (
-    <>
-      <div className="grid grid-cols-1 gap-8 ">
-        <ul>
-          {
-            articles.length ? articles.map((article: Article) => (
-              <li key={ article.id }>
-                <ArticleCard article={ article } />
-              </li>
-            )) : (<li>Vazio</li>)
-          }
-        </ul>
-      </div>
-    </>
+    <ul className="flex flex-col gap-6">
+      {
+        articles.length ? articles.map((article) =>
+          (<ArticleCard article={ article } key={ article.id }/>)) : (<li>Vazio</li>)
+      }
+    </ul>
   );
 }

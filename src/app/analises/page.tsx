@@ -1,7 +1,16 @@
-export default function Page() {
+import { ArticleList } from '@/components/ArticleList';
+import { StrapiListResponse } from '@/models/StrapiListResponse';
+import { Article } from '@/models/Article';
+import { reviewsQuery } from '@/queries/reviewsQuery';
+import { getStrapiList } from '@/utils/getStrapiList';
+
+export default async function Page() {
+  const reviewResponse: StrapiListResponse<Article> =
+    await getStrapiList<Article>('articles', reviewsQuery());
+
   return (
     <div>
-      <h1>Welcome to Análises!</h1>
+      <ArticleList articles={reviewResponse.data} />
     </div>
   );
 }

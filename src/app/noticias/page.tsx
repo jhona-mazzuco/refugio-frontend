@@ -1,7 +1,13 @@
-export default function NoticiasPage() {
+import { Article } from '@/models/Article';
+import { newsQuery } from '@/queries/newsQuery';
+import { ArticleList } from '@/components/ArticleList';
+import { getStrapiList } from '@/utils/getStrapiList';
+
+export default async function Page() {
+  const newsResponse = await getStrapiList<Article>('articles', newsQuery());
   return (
     <div>
-      <h1>Welcome to Noticias!</h1>
+      <ArticleList articles={newsResponse.data} />
     </div>
   );
 }
