@@ -1,7 +1,7 @@
 import { Tag } from './Tag';
 import { RichTextFieldContent } from './RichTextFieldContent';
 import { UploadedImage } from './UploadedImage';
-import { Author } from './Author';
+import { AuthorProfile } from './AuthorProfile';
 
 export interface Article {
   id: number;
@@ -15,7 +15,7 @@ export interface Article {
   updatedAt: string;
   publishedAt: string;
   tags: Tag[];
-  profile: Author;
+  profile: AuthorProfile;
   score: number | null;
   game: number | null;
 }
