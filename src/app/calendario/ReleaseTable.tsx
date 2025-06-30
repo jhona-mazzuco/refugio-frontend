@@ -39,7 +39,7 @@ interface ReleaseTableProps {
 export function ReleaseTable({ title, items }: ReleaseTableProps) {
   return (
     <table className={`table-auto border-spacing-2 w-full max-w-[800px]`}>
-      <caption className="font-heading text-2xl mb-6 capitalize">
+      <caption className="font-heading text-2xl mb-6 capitalize bg-white underline underline-offset-5 decoration-primary-400">
         {title}
       </caption>
       <thead className="font-heading">

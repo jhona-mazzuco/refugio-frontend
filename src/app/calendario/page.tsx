@@ -1,7 +1,7 @@
 import { releasesQuery } from '@/lib/queries/releasesQuery';
 import { Release } from '@/lib/models/Release';
 import { format, parseISO } from 'date-fns';
-import { ReleaseTable } from '@/app/ui/ReleaseTable';
+import { ReleaseTable } from '@/app/calendario/ReleaseTable';
 import { pt } from 'date-fns/locale';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 

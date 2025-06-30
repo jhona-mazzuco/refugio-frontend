@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Icon from '@/app/ui/Icon';
+import { FaChevronRight } from 'react-icons/fa6';
 
 interface AsideContentProps {
   title: string;
@@ -17,16 +17,14 @@ export default function AsideContent({
 }: AsideContentProps) {
   return (
     <section>
-      <div className="flex justify-between items-center border-b border-neutral-100 pb-2 mb-2">
-        <h2 className="font-heading text-2xl text-wrap">{title}</h2>
+      <div className="flex justify-between items-center flex-wrap gap-3 font-heading border-b border-neutral-100 pb-2 mb-2">
+        <h2 className="text-2xl">{title}</h2>
         <Link
-          className="flex items-center text-sm gap-1 text-primary-500"
+          className="flex items-center justify-self-end gap-[2px] text-xs text-primary-500"
           href={seeAllUrl}
         >
           Ver tudo
-          <div className="align-middle text-xs">
-            <Icon name={`arrow_right_alt`} />
-          </div>
+          <FaChevronRight />
         </Link>
       </div>
 

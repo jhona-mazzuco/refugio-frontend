@@ -15,7 +15,6 @@ const orbitronFont = Orbitron({
   variable: '--font-orbitron',
 });
 
-
 export const metadata = {
   title: 'Refúgio Gamer',
   description:
@@ -56,20 +55,22 @@ export const metadata = {
   ],
 };
 
-export default function RootLayout({ children }: {
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="pt">
-    <body
-      className={ `flex flex-col ${ exoFont.variable } ${ orbitronFont.variable } antialiased` }
-    >
-    <main className={ `max-w-5xl mx-auto` }>
-      <Navbar/>
-      <div className={ 'py-4' }>{ children }</div>
-      <Footer/>
-    </main>
-    </body>
+      <body
+        className={`flex flex-col ${exoFont.variable} ${orbitronFont.variable} antialiased`}
+      >
+        <main className={`max-w-5xl mx-auto`}>
+          <Navbar />
+          <div className={'py-4'}>{children}</div>
+          <Footer />
+        </main>
+      </body>
     </html>
   );
 }
