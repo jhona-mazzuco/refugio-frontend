@@ -74,7 +74,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`grid grid-cols-4 items-center p-2 border-b-1 border-gray-200 px-4 mx-auto sticky top-0 bg-white`}
+      className={`grid grid-cols-4 items-center p-2 border-b-1 border-gray-200 px-4 mx-auto sticky top-0 bg-white z-10`}
     >
       <MenuButton />
 
