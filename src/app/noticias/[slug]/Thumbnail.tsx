@@ -1,5 +1,3 @@
-'use client';
-
 interface ThumbnailProps {
   thumbnail: string;
   title: string;
