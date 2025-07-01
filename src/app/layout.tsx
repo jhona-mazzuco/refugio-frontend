@@ -67,7 +67,7 @@ export default function RootLayout({
       >
         <main className={`max-w-5xl mx-auto`}>
           <Navbar />
-          <div className={'py-4'}>{children}</div>
+          <div className={'px-1 lg:px-0 py-4'}>{children}</div>
           <Footer />
         </main>
       </body>

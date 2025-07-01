@@ -40,7 +40,6 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
         <div className="flex flex-wrap gap-4 items-center">
           <Author author={ article.profile }/>
-
           <b className="text-lg text-neutral-600 relative bottom-1">.</b>
           <p className="text-neutral-600 text-xs whitespace-pre-wrap">
             <DatePublished date={ article.publishedAt }/>

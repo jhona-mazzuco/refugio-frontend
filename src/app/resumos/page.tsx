@@ -3,7 +3,7 @@ import { ArticleList } from '@/app/ui/ArticleList';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 import { resumesQuery } from '@/lib/queries/resumesQuery';
 
-export default async function Page() {
+export default async function ResumePage() {
   const resumeResponse = await getStrapiList<Article>(
     'articles',
     resumesQuery(),

@@ -5,7 +5,7 @@ import { ReleaseTable } from '@/app/calendario/ReleaseTable';
 import { pt } from 'date-fns/locale';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 
-export default async function Page() {
+export default async function ReleasePage() {
   const response = await getStrapiList<Release>('calendars', releasesQuery());
   const dataMap = new Map<string, Release[]>();
   for (const release of response.data) {

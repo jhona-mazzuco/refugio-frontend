@@ -1,3 +1,5 @@
+import { StrapiListResponse } from '@/lib/models/StrapiListResponse';
+
 export async function getStrapiList<T>(url: string, queryParams?: string) {
   const response = await fetch(
     `${process.env['PRIVATE_STRAPI_URL']}/${url}?${queryParams}`,
@@ -13,10 +15,10 @@ export async function getStrapiList<T>(url: string, queryParams?: string) {
     return {
       data: [],
       meta: null,
-    };
+    } as StrapiListResponse<T>;
   }
 
-  const data = await response.json();
+  const data: StrapiListResponse<T> = await response.json();
 
   return data;
 }

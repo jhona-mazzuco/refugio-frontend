@@ -18,7 +18,7 @@ function MenuButton() {
         <FaBars />
       </button>
 
-      <div className={'hidden sm:block'}>
+      <div className={'hidden lg:block'}>
         <HomeLogo />
       </div>
     </div>
@@ -84,7 +84,7 @@ export function Navbar() {
 
       <ul
         className={
-          'hidden sm:flex flex-row gap-3 justify-center items-center center list-none col-span-2'
+          'hidden lg:flex flex-row gap-3 justify-center items-center center list-none col-span-2'
         }
       >
         {menuOptions.map(({ label, url }, idx) => (
