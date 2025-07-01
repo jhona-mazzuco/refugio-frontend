@@ -3,25 +3,104 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { FaBars, FaDiscord } from 'react-icons/fa6';
+import { FaBars, FaDiscord, FaXmark } from 'react-icons/fa6';
 import { FaSearch } from 'react-icons/fa';
+import { useState } from 'react';
+import classNames from 'classnames';
 
 interface MenuOption {
   label: string;
   url: string;
 }
 
-function MenuButton() {
-  return (
-    <div className={`flex items-center gap-8`}>
-      <button className={`text-primary-900 cursor-pointer justify-self-start`}>
-        <FaBars />
-      </button>
+const menuOptions: MenuOption[] = [
+  {
+    label: 'Ínicio',
+    url: '/',
+  },
+  {
+    label: 'Notícias',
+    url: '/noticias',
+  },
+  {
+    label: 'Análises',
+    url: '/analises',
+  },
+  {
+    label: 'Resumos',
+    url: '/resumos',
+  },
+  {
+    label: 'Calendário',
+    url: '/calendario',
+  },
+];
 
-      <div className={'hidden lg:block'}>
-        <HomeLogo />
+function MenuButton() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openClassName = classNames([
+    {
+      'translate-x-0': isOpen,
+      '-translate-x-full': !isOpen,
+    },
+  ]);
+
+  return (
+    <>
+      <div className={`flex items-center gap-8`}>
+        <button
+          className={`text-primary-900 cursor-pointer justify-self-start`}
+          onClick={() => setIsOpen(true)}
+        >
+          <FaBars />
+        </button>
+
+        <div className={'hidden lg:block'}>
+          <HomeLogo />
+        </div>
       </div>
-    </div>
+
+      <div
+        className={`w-full h-full fixed top-0 left-0 bg-black/50 z-40 ${openClassName}`}
+      >
+        <div
+          className={`w-64 h-full bg-white p-4 transition-transform duration-300 z-50 ${openClassName}`}
+        >
+          <div className={`grid grid-rows-1`}>
+            <button
+              className="cursor-pointer justify-self-end"
+              onClick={() => setIsOpen(false)}
+            >
+              <FaXmark />
+            </button>
+
+            <Image
+              src={'/logo-with-title.webp'}
+              alt={'Logo Refúgio Gamer'}
+              width={150}
+              height={79.3}
+            />
+          </div>
+          <nav>
+            <ul className="space-y-5 pt-4">
+              {menuOptions.map((menuOption) => (
+                <li key={menuOption.label}>
+                  <Link
+                    className={`text-lg font-heading font-semibold hover:text-hover hover:text-shadow-sm transition duration-200
+                underline-offset-[23px] decoration-primary-300`}
+                    href={menuOption.url}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {menuOption.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -49,28 +128,6 @@ function HomeLogo() {
 
 export function Navbar() {
   const pathname = usePathname();
-  const menuOptions: MenuOption[] = [
-    {
-      label: 'Ínicio',
-      url: '/',
-    },
-    {
-      label: 'Notícias',
-      url: '/noticias',
-    },
-    {
-      label: 'Análises',
-      url: '/analises',
-    },
-    {
-      label: 'Resumos',
-      url: '/resumos',
-    },
-    {
-      label: 'Calendário',
-      url: '/calendario',
-    },
-  ];
 
   return (
     <nav
