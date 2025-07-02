@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaDiscord, FaXmark } from 'react-icons/fa6';
-import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
 import classNames from 'classnames';
 
