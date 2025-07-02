@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import classNames from 'classnames';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<any> {
   className?: string;
   children: ReactNode;
   onClick?: () => void;
@@ -15,9 +15,11 @@ export default function Button({
   className,
   onClick,
   size = 'sm',
+  ...props
 }: ButtonProps) {
   return (
     <button
+      {...props}
       onClick={onClick}
       className={classNames(
         'font-heading bg-primary-400 rounded-full',

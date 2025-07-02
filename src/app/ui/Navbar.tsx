@@ -107,10 +107,6 @@ function MenuButton() {
 function ActionsMenu() {
   return (
     <section className={'flex justify-end gap-3'}>
-      <button className={'cursor-pointer'}>
-        <FaSearch />
-      </button>
-
       <Link href={'https://discord.gg/M5W7TPguxk'} target="_blank">
         <FaDiscord />
       </Link>
