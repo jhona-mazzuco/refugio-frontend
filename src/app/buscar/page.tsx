@@ -4,10 +4,8 @@ import Button from '@/app/ui/Button';
 import { FaSearch } from 'react-icons/fa';
 import Form from 'next/form';
 import { Article } from '@/lib/models/Article';
-import { searchArticlesQuery } from '@/lib/queries/searchArticlesQuery';
 import { useSearchParams } from 'next/navigation';
 import { ArticleList } from '@/app/ui/ArticleList';
-import { getClientStrapiList } from '@/lib/utils/getClientStrapiList';
 
 export default function SearchPage() {
   const queryParams = useSearchParams();
@@ -15,14 +13,6 @@ export default function SearchPage() {
   let articles: Article[] = [];
   const query = queryParams.get('query');
   if (query) {
-    getClientStrapiList(
-      'articles',
-      searchArticlesQuery(query),
-    ).then((response) => {
-      if (response.data?.length) {
-        articles = [...response.data] as Article[];
-      }
-    });
   }
 
   return (
