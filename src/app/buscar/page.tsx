@@ -3,21 +3,10 @@
 import Button from '@/app/ui/Button';
 import { FaSearch } from 'react-icons/fa';
 import Form from 'next/form';
-import { Article } from '@/lib/models/Article';
-import { useSearchParams } from 'next/navigation';
-import { ArticleList } from '@/app/ui/ArticleList';
 
 export default function SearchPage() {
-  const queryParams = useSearchParams();
-
-  let articles: Article[] = [];
-  const query = queryParams.get('query');
-  if (query) {
-  }
-
   return (
     <section>
-      <b>{queryParams.get('query')}</b>
       <h1 className={'font-heading  font-bold text-2xl mb-4'}>
         Buscar notícia
       </h1>
@@ -40,8 +29,6 @@ export default function SearchPage() {
 
         <Button type="submit">Buscar</Button>
       </Form>
-
-      {!!articles.length && <ArticleList articles={articles} />}
     </section>
   );
 }
