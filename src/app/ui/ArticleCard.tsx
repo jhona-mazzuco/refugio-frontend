@@ -1,7 +1,7 @@
 import { Article } from '@/lib/models/Article';
 import Link from 'next/link';
 import ArticleTag from './ArticleTag';
-import DatePublished from '../DatePublished';
+import DatePublished from './DatePublished';
 import Author from './Author';
 
 interface ArticleCardProps {

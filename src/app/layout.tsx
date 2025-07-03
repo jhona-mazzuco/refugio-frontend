@@ -65,11 +65,13 @@ export default function RootLayout({
       <body
         className={`flex flex-col ${exoFont.variable} ${orbitronFont.variable} antialiased`}
       >
-        <main className={`max-w-5xl mx-auto`}>
-          <Navbar />
-          <div className={'px-1 lg:px-0 py-4'}>{children}</div>
-          <Footer />
+        <Navbar />
+        <main
+          className={`max-w-5xl min-h-(--min-height-app) mx-auto px-1 lg:px-0 py-4`}
+        >
+          {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

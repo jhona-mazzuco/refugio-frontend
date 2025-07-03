@@ -1,7 +1,7 @@
 import qs from 'qs';
 import { Tags } from '@/lib/models/Tags';
 
-export function resumesQuery() {
+export function resumesQuery(page = '1') {
   return qs.stringify({
     status: 'published',
     filters: {
@@ -30,6 +30,7 @@ export function resumesQuery() {
     },
     sort: ['publishedAt:desc'],
     pagination: {
+      page: Number.parseInt(page),
       pageSize: 10,
     },
   });

@@ -22,7 +22,7 @@ export default function Button({
       {...props}
       onClick={onClick}
       className={classNames(
-        'font-heading bg-primary-400 rounded-full',
+        'font-heading bg-primary-400 rounded-full cursor-pointer',
         className,
         {
           'text-sm px-3 py-1 font-semibold': size === 'sm',

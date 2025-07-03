@@ -5,8 +5,8 @@ import Score from '@/app/ui/Score';
 import { ScoreSize } from '@/lib/models/ScoreSize';
 import ArticleTag from '@/app/ui/ArticleTag';
 import UnoptimizedImage from '@/app/ui/UnoptimizedImage';
-import { Thumbnail } from '@/app/noticias/[slug]/Thumbnail';
-import ArticleRenderer from '@/app/noticias/[slug]/ArticleRenderer';
+import { Thumbnail } from '@/app/ui/Thumbnail';
+import ArticleRenderer from '@/app/ui/ArticleRenderer';
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;

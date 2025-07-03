@@ -1,14 +1,9 @@
 import qs from 'qs';
 
-export function homeArticlesQuery(page = 1, lastPublished?: string) {
+export function homeArticlesQuery(page = 1) {
   const query = {
     status: 'published',
     fields: ['name', 'slug', 'publishedAt', ' description'],
-    filter: lastPublished ? {
-      publishedAt: {
-        $lt: lastPublished,
-      },
-    } : null,
     populate: {
       thumbnail: {
         fields: ['url'],

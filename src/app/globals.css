@@ -127,6 +127,7 @@
   --font-text: 'Exo 2', arial;
   --font-heading: 'Orbitron', sans-serif;
   --color-hover: var(--color-primary-500);
+  --min-height-app: calc(100vh - 130px);
 }
 
 :root {

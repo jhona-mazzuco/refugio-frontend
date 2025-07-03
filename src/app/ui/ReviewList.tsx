@@ -1,10 +1,10 @@
 import { Article } from '@/lib/models/Article';
-import Author from './ui/Author';
-import Score from './ui/Score';
+import Author from './Author';
+import Score from './Score';
 import { ScoreSize } from '@/lib/models/ScoreSize';
 import { homeReviewsQuery } from '@/lib/queries/homeReviewsQuery';
 import React from 'react';
-import AsideContent from './ui/AsideContent';
+import AsideContent from './AsideContent';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 
 export default async function ReviewList() {
