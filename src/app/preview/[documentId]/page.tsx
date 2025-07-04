@@ -11,6 +11,12 @@ export default async function PreviewPage({ params }: PreviewProps) {
 
   const response = await fetch(
     `${process.env.PRIVATE_STRAPI_URL}/articles/${documentId}?${previewQuery()}`,
+    {
+      next: { revalidate: 60 },
+      headers: {
+        Authorization: `Bearer ${process.env['NEXT_PUBLIC_STRAPI_TOKEN']}`,
+      },
+    },
   );
 
   if (!response.ok) {
