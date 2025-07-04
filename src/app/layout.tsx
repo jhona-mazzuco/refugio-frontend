@@ -2,6 +2,7 @@ import './globals.css';
 import { Exo_2, Orbitron } from 'next/font/google';
 import Navbar from '@/app/ui/Navbar';
 import Footer from '@/app/ui/Footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const exoFont = Exo_2({
   subsets: ['latin'],
@@ -60,8 +61,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const analyticsId = process.env['ANALYTICS_ID'];
   return (
     <html lang="pt">
+      {!!analyticsId && <GoogleAnalytics gaId={'G-W7H6LRRZ70'} />}
       <body
         className={`flex flex-col ${exoFont.variable} ${orbitronFont.variable} antialiased`}
       >

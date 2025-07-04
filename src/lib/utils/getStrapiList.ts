@@ -2,7 +2,7 @@ import { StrapiListResponse } from '@/lib/models/StrapiListResponse';
 
 export async function getStrapiList<T>(url: string, queryParams?: string) {
   const response = await fetch(
-    `${process.env['PRIVATE_STRAPI_URL']}/${url}?${queryParams}`,
+    `${process.env['NEXT_PUBLIC_STRAPI_URL']}/${url}?${queryParams}`,
     {
       next: { revalidate: 60 },
       headers: {

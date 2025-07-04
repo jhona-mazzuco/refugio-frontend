@@ -10,7 +10,7 @@ export default async function PreviewPage({ params }: PreviewProps) {
   const { documentId } = await params;
 
   const response = await fetch(
-    `${process.env.PRIVATE_STRAPI_URL}/articles/${documentId}?${previewQuery()}`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles/${documentId}?${previewQuery()}`,
     {
       next: { revalidate: 60 },
       headers: {
