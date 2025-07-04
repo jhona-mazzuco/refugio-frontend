@@ -64,7 +64,7 @@ export default function RootLayout({
   const analyticsId = process.env['ANALYTICS_ID'];
   return (
     <html lang="pt">
-      {!!analyticsId && <GoogleAnalytics gaId={'G-W7H6LRRZ70'} />}
+      {!!analyticsId && <GoogleAnalytics gaId={analyticsId} />}
       <body
         className={`flex flex-col ${exoFont.variable} ${orbitronFont.variable} antialiased`}
       >
