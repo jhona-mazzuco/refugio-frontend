@@ -3,6 +3,11 @@ import { ArticleList } from '@/app/ui/ArticleList';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 import { resumesQuery } from '@/lib/queries/resumesQuery';
 import ArticleViewMore from '@/app/ui/ArticleViewMore';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Resumos - Refúgio Gamer',
+}
 
 interface ResumeProps {
   searchParams: Promise<{ [key: string]: string }>;

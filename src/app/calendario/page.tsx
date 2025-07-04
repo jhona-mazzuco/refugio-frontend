@@ -4,6 +4,11 @@ import { format, parseISO } from 'date-fns';
 import { ReleaseTable } from '@/app/ui/ReleaseTable';
 import { pt } from 'date-fns/locale';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Calendário - Refúgio Gamer',
+}
 
 export default async function ReleasePage() {
   const response = await getStrapiList<Release>('calendars', releasesQuery());

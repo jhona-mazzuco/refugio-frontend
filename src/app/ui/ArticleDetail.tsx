@@ -18,7 +18,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
   const author = article.profile;
 
   return (
-    <section className="flex flex-col gap-4">
+    <article className="flex flex-col gap-4">
       <Thumbnail
         thumbnail={article.thumbnail.url}
         title={article.name}
@@ -56,6 +56,6 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
           <p className="text-sm text-neutral-500">{author.biography} </p>
         </div>
       </div>
-    </section>
+    </article>
   );
 }

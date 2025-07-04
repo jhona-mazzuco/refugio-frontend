@@ -8,6 +8,11 @@ import { searchArticlesQuery } from '@/lib/queries/searchArticlesQuery';
 import { ArticleList } from '@/app/ui/ArticleList';
 import ArticleViewMore from '@/app/ui/ArticleViewMore';
 import { StrapiListResponse } from '@/lib/models/StrapiListResponse';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Buscar - Refúgio Gamer',
+}
 
 interface SearchProps {
   searchParams: Promise<{ [key: string]: string }>;

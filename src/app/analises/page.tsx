@@ -3,6 +3,11 @@ import { Article } from '@/lib/models/Article';
 import { reviewsQuery } from '@/lib/queries/reviewsQuery';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 import ArticleViewMore from '@/app/ui/ArticleViewMore';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Análises - Refúgio Gamer',
+}
 
 interface ReviewProps {
   searchParams: Promise<{ [key: string]: string }>;

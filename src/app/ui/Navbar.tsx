@@ -125,37 +125,39 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav
-      className={`w-full max-w-5xl grid grid-cols-4 items-center p-2 border-b-1 border-gray-200 px-4 mx-auto sticky top-0 bg-white z-10`}
-    >
-      <MenuButton />
-
-      <div className={`col-span-2 justify-self-center sm:hidden`}>
-        <HomeLogo />
-      </div>
-
-      <ul
-        className={
-          'hidden lg:flex flex-row gap-3 justify-center items-center center list-none col-span-2'
-        }
+    <header className={'bg-white z-10 sticky top-0 '}>
+      <nav
+        className={`w-full max-w-5xl grid grid-cols-4 items-center p-2 border-b-1 border-gray-200 px-4 mx-auto`}
       >
-        {menuOptions.map(({ label, url }, idx) => (
-          <li key={idx}>
-            <Link
-              href={url}
-              className={`
-                text-md px-2 font-heading font-semibold hover:text-hover hover:text-shadow-sm transition duration-200
-                underline-offset-[23px] decoration-primary-300 ${pathname === url && 'underline'}
-              `}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        <MenuButton />
 
-      <ActionsMenu />
-    </nav>
+        <div className={`col-span-2 justify-self-center sm:hidden`}>
+          <HomeLogo />
+        </div>
+
+        <ul
+          className={
+            'hidden lg:flex flex-row gap-3 justify-center items-center center list-none col-span-2'
+          }
+        >
+          {menuOptions.map(({ label, url }, idx) => (
+            <li key={idx}>
+              <Link
+                href={url}
+                className={`
+                  text-md px-2 font-heading font-semibold hover:text-hover hover:text-shadow-sm transition duration-200
+                  underline-offset-[23px] decoration-primary-300 ${pathname === url && 'underline'}
+                `}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <ActionsMenu />
+      </nav>
+    </header>
   );
 }
 

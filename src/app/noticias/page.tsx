@@ -3,6 +3,11 @@ import { newsQuery } from '@/lib/queries/newsQuery';
 import { ArticleList } from '@/app/ui/ArticleList';
 import { getStrapiList } from '@/lib/utils/getStrapiList';
 import ArticleViewMore from '@/app/ui/ArticleViewMore';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Notícias - Refúgio Gamer',
+}
 
 interface NewsProps {
   searchParams: Promise<{ [key: string]: string }>;
