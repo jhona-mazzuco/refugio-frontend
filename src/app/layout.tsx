@@ -16,10 +16,13 @@ const orbitronFont = Orbitron({
   variable: '--font-orbitron',
 });
 
+const title = 'Refúgio Gamer';
+const description =
+  'O Refúgio Gamer é um portal independente sobre games, com reviews sinceras, notícias equilibradas e conteúdo feito por quem realmente joga. Aqui, a paixão pelos videogames é levada a sério.';
+
 export const metadata = {
-  title: 'Refúgio Gamer',
-  description:
-    'O Refúgio Gamer é um portal independente sobre games, com reviews sinceras, notícias equilibradas e conteúdo feito por quem realmente joga. Aqui, a paixão pelos videogames é levada a sério.',
+  title,
+  description,
   keywords: [
     'Refúgio Gamer',
     'games',
@@ -54,6 +57,16 @@ export const metadata = {
     'state of play',
     'direct',
   ],
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url: 'https://bucket.refugiogamer.com/logo_0a9505b507.webp',
+        alt: `Logo Refúgio Gamer`,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
