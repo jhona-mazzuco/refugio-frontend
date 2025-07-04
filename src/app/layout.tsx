@@ -64,7 +64,6 @@ export default function RootLayout({
   const analyticsId = process.env['ANALYTICS_ID'];
   return (
     <html lang="pt">
-      {!!analyticsId && <GoogleAnalytics gaId={analyticsId} />}
       <body
         className={`flex flex-col ${exoFont.variable} ${orbitronFont.variable} antialiased`}
       >
@@ -76,6 +75,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
+      {!!analyticsId && <GoogleAnalytics gaId={analyticsId} />}
     </html>
   );
 }
