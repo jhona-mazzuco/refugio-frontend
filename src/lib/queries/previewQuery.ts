@@ -2,7 +2,8 @@ import qs from 'qs';
 
 export function previewQuery() {
   return qs.stringify({
-    fields: ['name', 'slug', 'content', 'publishedAt', 'description', 'score'],
+    status: 'null',
+    fields: ['name', 'slug', 'content', 'description', 'score'],
     populate: {
       thumbnail: {
         fields: ['url'],
