@@ -1,6 +1,5 @@
-import { StrapiMeta } from './StrapiMeta';
+import { BaseStrapiResponse } from '@/lib/models/BaseStrapiResponse';
 
-export interface StrapiListResponse<T> {
+export interface StrapiListResponse<T> extends BaseStrapiResponse {
   data: T[];
-  meta: StrapiMeta | null;
 }
