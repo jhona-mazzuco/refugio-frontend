@@ -2,7 +2,7 @@ import './globals.css';
 import { Exo_2, Orbitron } from 'next/font/google';
 import Navbar from '@/app/ui/Navbar';
 import Footer from '@/app/ui/Footer';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
 const exoFont = Exo_2({
   subsets: ['latin'],
@@ -74,9 +74,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const analyticsId = process.env['ANALYTICS_ID'];
+  const gtmId = process.env['NEXT_PUBLIC_GTM_ID'];
   return (
     <html lang="pt">
+      {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body
         className={`flex flex-col ${exoFont.variable} ${orbitronFont.variable} antialiased`}
       >
@@ -88,7 +89,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
-      {!!analyticsId && <GoogleAnalytics gaId={analyticsId} />}
+      {!!gtmId && <GoogleAnalytics gaId={gtmId} />}
     </html>
   );
 }
