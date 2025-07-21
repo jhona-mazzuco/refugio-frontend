@@ -62,7 +62,7 @@ function Paragraph({ content }: ContentProps) {
   }
 
   return (
-    <p className={`text-lg my-4`}>
+    <p className={`text-lg`}>
       {content.children?.map((row, key) => getTemplate(row, key))}
     </p>
   );

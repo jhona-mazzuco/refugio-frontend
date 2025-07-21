@@ -18,15 +18,15 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         href={ `/noticias/${ article.slug }` }
       />
 
-      <Link className="grid gap-3 sm:gap-1 sm:pb-1 sm:col-span-2" href={ `/noticias/${ article.slug }` }>
+      <Link className="grid gap-3 sm:gap-1 sm:pb-1 sm:col-span-2 md:h-[196px]" href={ `/noticias/${ article.slug }` }>
         <label
-          className={ `font-heading text-neutral-900 font-medium sm:text-lg md:text-xl group-hover:text-primary-500
+          className={ `font-heading text-neutral-900 font-medium sm:text-lg md:text-lg group-hover:text-primary-500
                    transition-colors delay-100 duration-300 ease-in-out cursor-pointer` }
         >
           { article.name }
         </label>
 
-        <p className="text-base text-neutral-600">{ article.description }</p>
+        <p className="text-sm text-neutral-600">{ article.description }</p>
 
         <ul className="flex flex-row gap-2 flex-wrap items-center">
           {
