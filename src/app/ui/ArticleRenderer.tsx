@@ -4,6 +4,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import UnoptimizedImage from '@/app/ui/UnoptimizedImage';
 import { RichTextFieldContentListFormat } from '@/lib/models/RichTextFieldContentListFormat';
+import { ArticleEmbed } from '@/app/ui/ArticleEmbed';
 
 interface ArticleRendererProps {
   content: RichTextFieldContent[];
@@ -18,7 +19,7 @@ interface StyledTextProps extends ContentProps {
 }
 
 function StyledText({ content, children }: StyledTextProps) {
-  const { bold, code, italic, strikethrough, underline } = content;
+  const { bold, italic, strikethrough, underline } = content;
   return (
     <span
       className={classNames([
@@ -28,7 +29,6 @@ function StyledText({ content, children }: StyledTextProps) {
           italic: italic,
           'line-through': strikethrough,
           underline: underline,
-          'block border-2 border-primary-300 rounded-md p-4': code,
         },
       ])}
     >
@@ -54,6 +54,14 @@ function Paragraph({ content }: ContentProps) {
       );
     }
 
+    if (content.code && content.type === RichTextFieldContentType.text) {
+      return (
+        <span key={key}>
+          <ArticleEmbed html={content.text as string} />
+        </span>
+      );
+    }
+
     return (
       <StyledText content={content} key={key}>
         {content.text}
@@ -75,7 +83,7 @@ function Image({ content }: ContentProps) {
         <UnoptimizedImage
           src={content.image.url}
           alt={content.image.alternativeText}
-          className={"w-[80%] rounded-md border-2 shadow-primary-300"}
+          className={'w-[80%] rounded-md border-2 shadow-primary-300'}
           width={100}
           height={100}
         />
@@ -194,6 +202,10 @@ function Quote({ content }: ContentProps) {
       </blockquote>
     </div>
   );
+}
+
+function Code({ content }: ContentProps) {
+  return <div className="flex justify-center"></div>;
 }
 
 export default function ArticleRenderer({ content }: ArticleRendererProps) {
