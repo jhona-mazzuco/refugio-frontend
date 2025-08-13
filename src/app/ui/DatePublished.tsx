@@ -1,3 +1,5 @@
+'use client';
+
 import { formatRelative, parseISO } from "date-fns";
 import { pt } from "date-fns/locale";
 
@@ -8,6 +10,6 @@ interface DatePublishedProps {
 export default function DatePublished({ date }: DatePublishedProps) {
   const dateISO = parseISO(date);
   return (
-    <time dateTime={ date }>{ formatRelative(dateISO, new Date(), { locale: pt, weekStartsOn: 0 }) }</time>
+    <time dateTime={ date }>{ formatRelative(dateISO, new Date(), { locale: pt }) }</time>
   )
 }
