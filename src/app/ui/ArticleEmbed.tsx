@@ -11,10 +11,21 @@ export function ArticleEmbed({ html }: ArticleEmbedProps) {
     allowedTags: ['iframe'],
     allowedAttributes: false,
     allowedIframeHostnames: ['www.youtube.com'],
+    transformTags: {
+      iframe: function (tagName, attribs) {
+        return {
+          tagName,
+          attribs: {
+            ...attribs,
+            class: 'w-full aspect-radio',
+          },
+        };
+      },
+    },
   });
   return (
     <span
-      className={'flex justify-center'}
+      className={'flex justify-center sm:[&_iframe]:w-full'}
       dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
     />
   );
