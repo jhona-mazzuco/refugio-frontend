@@ -17,7 +17,7 @@ export function ArticleEmbed({ html }: ArticleEmbedProps) {
           tagName,
           attribs: {
             ...attribs,
-            class: 'w-full aspect-radio',
+            class: 'sm:w-full aspect-radio',
           },
         };
       },
