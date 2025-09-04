@@ -194,7 +194,7 @@ function Quote({ content }: ContentProps) {
           ></path>
         </svg>
 
-        <div className="relative z-10">
+        <div className="relative z-1">
           <p className="text-lg font-semibold">
             <em>{content.children?.map((child) => child.text).join(' ')}</em>
           </p>
