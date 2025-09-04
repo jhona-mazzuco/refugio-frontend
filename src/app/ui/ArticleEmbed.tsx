@@ -25,7 +25,7 @@ export function ArticleEmbed({ html }: ArticleEmbedProps) {
   });
   return (
     <span
-      className={'flex justify-center sm:[&_iframe]:w-full'}
+      className={'flex justify-center'}
       dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
     />
   );
