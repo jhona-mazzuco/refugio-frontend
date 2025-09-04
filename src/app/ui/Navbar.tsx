@@ -131,7 +131,7 @@ export function Navbar() {
       >
         <MenuButton />
 
-        <div className={`col-span-2 justify-self-center sm:hidden`}>
+        <div className={`col-span-2 justify-self-center lg:hidden`}>
           <HomeLogo />
         </div>
 
