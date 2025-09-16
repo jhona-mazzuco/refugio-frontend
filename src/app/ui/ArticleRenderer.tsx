@@ -70,7 +70,7 @@ function Paragraph({ content }: ContentProps) {
   }
 
   return (
-    <p className={`text-lg`}>
+    <p className={`text-sm sm:text-lg`}>
       {content.children?.map((row, key) => getTemplate(row, key))}
     </p>
   );
@@ -97,7 +97,7 @@ function List({ content }: ContentProps) {
 
   if (isOrdered) {
     return (
-      <ol className="list-decimal marker:text-primary-400 marker:text-sm">
+      <ol className="list-decimal pl-4 marker:text-primary-400 marker:text-sm">
         {content.children?.map((list) =>
           list.children?.map((item, idx) => (
             <li key={idx}>
@@ -110,10 +110,10 @@ function List({ content }: ContentProps) {
   }
 
   return (
-    <ul className="list-disc marker:text-primary-400 marker:text-sm">
+    <ul className="list-disc pl-4 marker:text-primary-400 marker:text-sm">
       {content.children?.map((list) =>
         list.children?.map((item, idx) => (
-          <li key={idx}>
+          <li key={idx} className={`list-item ml-0`}>
             <StyledText content={item}>{item.text}</StyledText>
           </li>
         )),
