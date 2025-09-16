@@ -204,10 +204,6 @@ function Quote({ content }: ContentProps) {
   );
 }
 
-function Code({ content }: ContentProps) {
-  return <div className="flex justify-center"></div>;
-}
-
 export default function ArticleRenderer({ content }: ArticleRendererProps) {
   return (
     <>
