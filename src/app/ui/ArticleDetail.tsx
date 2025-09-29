@@ -35,7 +35,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
       )}
 
       {!!article.tags.length && (
-        <div className="flex gap-2 my-4 items-center">
+        <div className="flex gap-2 my-4 items-center flex-wrap">
           <b className="text-sm">Tags:</b>
           {article.tags.map((tag) => (
             <ArticleTag tag={tag} key={tag.id} />
