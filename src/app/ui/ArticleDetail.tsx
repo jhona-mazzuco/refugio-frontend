@@ -5,6 +5,7 @@ import Score from '@/app/ui/Score';
 import { ScoreSize } from '@/lib/models/ScoreSize';
 import ArticleTag from '@/app/ui/ArticleTag';
 import UnoptimizedImage from '@/app/ui/UnoptimizedImage';
+import ShareBar from '@/app/ui/ShareBar';
 
 interface ArticleDetailProps {
   article: Article;
@@ -16,6 +17,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
     !Number.isNaN(article.score) &&
     article.tags.some((tag) => tag.id === reviewID);
   const author = article.profile;
+  const shareUrl = `https://refugiogamer.com/noticias/${article.slug}`;
 
   return (
     <article className="flex flex-col gap-4 px-2 sm:p-0">
@@ -35,11 +37,15 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
       )}
 
       {!!article.tags.length && (
-        <div className="flex gap-2 my-4 items-center flex-wrap">
-          <b className="text-sm">Tags:</b>
-          {article.tags.map((tag) => (
-            <ArticleTag tag={tag} key={tag.id} />
-          ))}
+        <div className={`grid grid-cols-2 my-4`}>
+          <div className="flex gap-2 items-center flex-wrap">
+            <b className="text-sm">Tags:</b>
+            {article.tags.map((tag) => (
+              <ArticleTag tag={tag} key={tag.id} />
+            ))}
+          </div>
+
+          <ShareBar shareUrl={shareUrl} />
         </div>
       )}
 
