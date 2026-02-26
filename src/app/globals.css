@@ -19,9 +19,14 @@
     display: none;
   }
 
+  html {
+    background: var(--background) !important;
+  }
+
   body {
     @apply font-text;
     box-sizing: border-box;
+    background: var(--background) !important;
   }
 
   ::-moz-selection { /* Code for Firefox */

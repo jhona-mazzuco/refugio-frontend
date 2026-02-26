@@ -1,7 +1,8 @@
 import qs from 'qs';
 
-export function newsBySlugQuery(slug: string) {
+export function newsBySlugQuery(slug: string, status: string = 'published') {
   return qs.stringify({
+    status,
     filters: {
       slug: {
         $eq: slug,
