@@ -17,9 +17,12 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params;
 
+  const { isEnabled: isDraftMode } = await draftMode();
+  const status = isDraftMode ? 'draft' : 'published';
+
   const { data } = await getStrapiList<Article>(
     'articles',
-    newsBySlugQuery(slug),
+    newsBySlugQuery(slug, status),
   );
 
   if (!data?.length) {
