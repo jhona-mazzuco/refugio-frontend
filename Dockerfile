@@ -22,8 +22,6 @@ COPY --from=builder /app/next.config.ts ./
 COPY --from=builder /app/postcss.config.mjs ./
 COPY --from=builder /app/public ./public
 
-RUN npm install --only=production
-
 EXPOSE 3000
 
 CMD ["npm", "start"]
