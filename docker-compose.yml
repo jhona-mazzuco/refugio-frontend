@@ -1,9 +1,0 @@
-services:
-  refugio-frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: refugio-site
-    ports:
-      - "3000:3000"
-    restart: unless-stopped
