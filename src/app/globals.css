@@ -136,6 +136,6 @@
 }
 
 :root {
-  --background: var(--color-elevation-0);
+  --background: var(--color-elevation-1);
   --foreground: #171717;
 }

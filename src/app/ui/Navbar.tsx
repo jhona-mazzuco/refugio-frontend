@@ -125,7 +125,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className={'bg-white z-10 sticky top-0 '}>
+    <header className={'z-10 sticky top-0 bg-white'}>
       <nav
         className={`w-full max-w-5xl grid grid-cols-4 items-center p-2 border-b-1 border-gray-200 px-4 mx-auto`}
       >
